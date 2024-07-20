@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.widget {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 20px;
+  margin: 20px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.widgetIcon {
+  max-width: 30px;
+  position: relative;
+  right: 55%;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: aliceblue;
+  color: #141150;
+}
+
+.error {
+  border-left: 10px solid red;
+  background-color: #ef5a6f;
+}
+
+.error:hover {
+  box-shadow: 10px 0 15px rgba(178, 44, 44, 0.6);
+}
+
+.tip {
+  border-left: 10px solid rgb(196, 209, 9);
+  background-color: rgb(118, 116, 63);
+}
+
+.tip:hover {
+  box-shadow: 10px 0 15px rgba(178, 165, 44, 0.6);
+}
+
+.question {
+  border-left: 10px solid rgb(208, 228, 228);
+  background-color: rgb(52, 47, 109);
+}
+
+.question:hover {
+  box-shadow: 10px 0 15px rgba(206, 198, 208, 0.6);
+}
+
+.information {
+  border-left: 10px solid#141150;
+  background-color: #447fa6;
+}
+
+.information:hover {
+  box-shadow: 10px 0 15px rgba(44, 93, 178, 0.6);
+}
+
+.note {
+  border-left: 10px solid#88D66C;
+  background-color: #1a2706;
+}
+.note:hover {
+  box-shadow: 10px 0 15px rgba(44, 178, 98, 0.6);
+}
+
+.title {
+  margin-top: -30px;
+}
