@@ -1,14 +1,20 @@
-import { WidgetType } from "./components/information.widget";
-
-export interface WidgetContentProps {
-  type: WidgetType;
+export interface WidgetProp {
+  category: WidgetCategory;
   title: string;
   content: JSX.Element;
 }
 
-export const widgetContents: WidgetContentProps[] = [
+export type WidgetCategory =
+  | "error"
+  | "information"
+  | "note"
+  | "question"
+  | "tip"
+  | "warning";
+
+export const WidgetProps: WidgetProp[] = [
   {
-    type: "information",
+    category: "information",
     title: "The styled-components Happy Path",
     content: (
       <>
@@ -22,7 +28,7 @@ export const widgetContents: WidgetContentProps[] = [
     ),
   },
   {
-    type: "question",
+    category: "question",
     title: "Does it really work?",
     content: (
       <>
@@ -58,7 +64,7 @@ export const widgetContents: WidgetContentProps[] = [
     ),
   },
   {
-    type: "error",
+    category: "error",
     title: "Not a comprehensive tutorial!",
     content: (
       <>
@@ -86,7 +92,7 @@ export const widgetContents: WidgetContentProps[] = [
     ),
   },
   {
-    type: "note",
+    category: "note",
     title: "The Joy of React",
     content: (
       <>
@@ -111,7 +117,7 @@ export const widgetContents: WidgetContentProps[] = [
     ),
   },
   {
-    type: "tip",
+    category: "tip",
     title: "Optimize Your React Applications",
     content: (
       <>
@@ -145,6 +151,39 @@ export const widgetContents: WidgetContentProps[] = [
         <p>
           Implementing these practices can greatly enhance the performance and
           maintainability of your React applications. Happy coding!
+        </p>
+      </>
+    ),
+  },
+  {
+    category: "warning",
+    title: "Deprecated Methods in React",
+    content: (
+      <>
+        <p>
+          It's important to stay updated with the latest React practices to
+          avoid using deprecated methods. Here are some methods you should
+          avoid:
+        </p>
+        <ul>
+          <li>
+            <strong>componentWillMount</strong>: Use componentDidMount or
+            useEffect instead.
+          </li>
+          <li>
+            <strong>componentWillReceiveProps</strong>: Use
+            getDerivedStateFromProps or useEffect.
+          </li>
+          <li>
+            <strong>componentWillUpdate</strong>: Use componentDidUpdate or
+            useEffect.
+          </li>
+        </ul>
+        <p>
+          Using these outdated methods can lead to unexpected behaviors in your
+          applications. Refactoring your code to use the modern lifecycle
+          methods and hooks will help you maintain a more robust and
+          future-proof codebase.
         </p>
       </>
     ),
