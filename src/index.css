@@ -32,6 +32,7 @@ body {
   justify-content: center;
   background-color: rgb(24, 14, 14);
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 h1 {

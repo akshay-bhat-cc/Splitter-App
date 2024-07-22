@@ -1,16 +1,4 @@
-export interface WidgetProp {
-  category: WidgetCategory;
-  title: string;
-  content: JSX.Element;
-}
-
-export type WidgetCategory =
-  | "error"
-  | "information"
-  | "note"
-  | "question"
-  | "tip"
-  | "warning";
+import { WidgetProp } from "./components/InformationWidget";
 
 export const WidgetProps: WidgetProp[] = [
   {

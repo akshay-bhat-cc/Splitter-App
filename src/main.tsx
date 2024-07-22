@@ -1,13 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { InformationWidget } from "./components/InformationWidget.tsx";
-import { WidgetProps } from "./WidgetContents.tsx";
+import App from "./App.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    {WidgetProps.map(({ category, title, content }) => (
-      <InformationWidget category={category} title={title} content={content} />
-    ))}
+    <App></App>
   </React.StrictMode>
 );

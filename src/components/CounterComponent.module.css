@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+button {
+  transition: all 0.4s ease;
+  width: 5rem;
+}
+
+button:hover {
+  border-color: rgb(255, 183, 0);
+}
+
+.counterContainer {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 20px;
+  border: 2px solid whitesmoke;
+}
+
+.inputContainer {
+  display: flex;
+  gap: 2rem;
+}
+
+.counterControls {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.counterButton {
+  background-color: aliceblue;
+  color: #000;
+}
+
+.setButton {
+  background-color: #eeeeee;
+  color: #201e43;
+}
+
+.setButton:hover {
+  color: #eeeeee;
+  background-color: #201e43;
+}
+
+.counterButton:hover {
+  background-color: #000;
+  color: aliceblue;
+}
+
+.inputContainer input {
+  font-family: "Poppins";
+  padding: 10px;
+}
+
+.sum {
+  color: aquamarine;
+}

@@ -1,5 +1,18 @@
-import { WidgetCategory, WidgetProp } from "../WidgetContents";
 import styles from "./InformationWidget.module.css";
+
+export interface WidgetProp {
+  category: WidgetCategory;
+  title: string;
+  content: JSX.Element;
+}
+
+export type WidgetCategory =
+  | "error"
+  | "information"
+  | "note"
+  | "question"
+  | "tip"
+  | "warning";
 
 export const InformationWidget = ({ category, title, content }: WidgetProp) => {
   return (
@@ -11,7 +24,7 @@ export const InformationWidget = ({ category, title, content }: WidgetProp) => {
       />
       <article>
         <h2 className={styles.title}>{title}</h2>
-        <p className={styles.content}>{content}</p>
+        {content}
       </article>
     </div>
   );
@@ -29,4 +42,3 @@ const widgetIconPaths: WidgetIconPaths = {
   tip: "src/assets/widget.icons/tip-icon.png",
   warning: "src/assets/widget.icons/warning-icon.png",
 };
-
