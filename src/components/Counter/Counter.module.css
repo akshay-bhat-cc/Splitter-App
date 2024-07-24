@@ -2,7 +2,9 @@
 
 button {
   transition: all 0.4s ease;
-  width: 5rem;
+  min-width: 6rem;
+  min-height: 2rem;
+  border-radius: 5px;
 }
 
 button:hover {
@@ -19,11 +21,6 @@ button:hover {
   border: 2px solid whitesmoke;
 }
 
-.inputContainer {
-  display: flex;
-  gap: 2rem;
-}
-
 .counterControls {
   width: 100%;
   display: flex;
@@ -36,24 +33,9 @@ button:hover {
   color: #000;
 }
 
-.setButton {
-  background-color: #eeeeee;
-  color: #201e43;
-}
-
-.setButton:hover {
-  color: #eeeeee;
-  background-color: #201e43;
-}
-
 .counterButton:hover {
   background-color: #000;
   color: aliceblue;
-}
-
-.inputContainer input {
-  font-family: "Poppins";
-  padding: 10px;
 }
 
 .sum {

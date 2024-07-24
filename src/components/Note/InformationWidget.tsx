@@ -1,12 +1,32 @@
 import styles from "./InformationWidget.module.css";
 
 export interface WidgetProp {
+  /**
+   * The category of the widget, which defines its type and purpose.
+   * Available categories are:
+   * - success: Indicates a successful operation or completion.
+   * - information: Provides general information or updates.
+   * - note: A standard note for additional context or information.
+   * - error: Indicates an error or issue that needs attention.
+   * - question: Represents a query or requires user input.
+   * - tip: Offers helpful tips or best practices.
+   * - warning: Warns about potential issues or important notices.
+   */
   category: WidgetCategory;
+
+  /**
+   * The title of the widget.
+   */
   title: string;
+
+  /**
+   * The main content of the widget.
+   */
   content: JSX.Element;
 }
 
 export type WidgetCategory =
+  | "success"
   | "error"
   | "information"
   | "note"
@@ -35,6 +55,7 @@ type WidgetIconPaths = {
 };
 
 const widgetIconPaths: WidgetIconPaths = {
+  success: "src/assets/widget.icons/success-icon.png",
   error: "src/assets/widget.icons/error-icon.png",
   information: "src/assets/widget.icons/information-icon.png",
   note: "src/assets/widget.icons/note-icon.png",

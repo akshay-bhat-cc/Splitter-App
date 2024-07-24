@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import { CounterComponent, DisplayTotal } from "./components/CounterComponent";
+import { Counter } from "./components/Counter/Counter";
+import { DisplayTotal } from "./components/Counter/DisplayTotal";
 
 function App() {
   const [totalSum, setTotalSum] = useState(0);
@@ -11,12 +12,12 @@ function App() {
     <>
       <DisplayTotal sum={totalSum}></DisplayTotal>
       <div className="counters">
-        <CounterComponent updatedTotalSum={updateTotalSum}></CounterComponent>
-        <CounterComponent updatedTotalSum={updateTotalSum}></CounterComponent>
-        <CounterComponent updatedTotalSum={updateTotalSum}></CounterComponent>
-        <CounterComponent updatedTotalSum={updateTotalSum}></CounterComponent>
-        <CounterComponent updatedTotalSum={updateTotalSum}></CounterComponent>
-        <CounterComponent updatedTotalSum={updateTotalSum}></CounterComponent>
+        <Counter updatedTotalSum={updateTotalSum}></Counter>
+        <Counter updatedTotalSum={updateTotalSum}></Counter>
+        <Counter updatedTotalSum={updateTotalSum}></Counter>
+        <Counter updatedTotalSum={updateTotalSum}></Counter>
+        <Counter updatedTotalSum={updateTotalSum}></Counter>
+        <Counter updatedTotalSum={updateTotalSum}></Counter>
       </div>
     </>
   );

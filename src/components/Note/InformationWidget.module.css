@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .widget {
-  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 15px;
@@ -11,18 +10,31 @@
   flex-direction: column;
   padding: 10px 20px;
   margin: 20px 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-left: 8px solid;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border-left: 5px solid;
+  color: aliceblue;
+  position: relative;
 }
 .widgetIcon {
-  max-width: 30px;
-  position: relative;
-  right: 55%;
-  bottom: 20px;
-  padding: 10px;
+  max-width: 25px;
+  position: absolute;
+  left: 0;
+  transform: translate(-60%, -150%);
+  padding: 5px;
   border-radius: 50%;
   background-color: aliceblue;
   color: #141150;
+}
+
+.success {
+  border-color: green;
+  background-color: #0b0a16;
+}
+
+.success:hover {
+  box-shadow: 10px 0 15px rgba(7, 227, 58, 0.6);
 }
 
 .error {
@@ -76,10 +88,6 @@
 
 .warning:hover {
   box-shadow: 10px 0 15px rgba(242, 220, 112, 0.6);
-}
-
-.title {
-  margin-top: -30px;
 }
 
 .content p {

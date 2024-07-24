@@ -1,4 +1,4 @@
-import { WidgetProp } from "./components/InformationWidget";
+import { WidgetProp } from "./components/Note/InformationWidget";
 
 export const WidgetProps: WidgetProp[] = [
   {
