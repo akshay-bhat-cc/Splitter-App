@@ -22,9 +22,16 @@ export const DisplayScreenResolution = () => {
 
   return (
     <>
-      <span>{screenResolution.height}</span>
-      <span>x</span>
-      <span>{screenResolution.width}</span>
+      <div>
+        <span>
+          {screenResolution.height}
+          {" px "}
+        </span>
+        <span>{" X "}</span>
+        <span>
+          {screenResolution.width} {" px "}
+        </span>
+      </div>
     </>
   );
 };
