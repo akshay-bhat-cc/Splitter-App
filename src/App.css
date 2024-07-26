@@ -47,3 +47,17 @@
   align-items: center;
   justify-content: space-between;
 }
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("/public/fonts/Space_Mono/SpaceMono-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("/public/fonts/Space_Mono/SpaceMono-Bold.ttf");
+  font-weight: 700;
+  font-style: bold;
+}

@@ -1,0 +1,45 @@
+.numberInputContainer {
+  gap: 5px;
+  font-family: "Space Mono", monospace;
+  box-sizing: border-box;
+  width: 524px;
+}
+
+.numberInputContainer label {
+  font-size: 1.25rem;
+}
+
+.numberInputContainer input {
+  padding: 8px 18px;
+  padding-left: 45px;
+  border-radius: 4px;
+  text-align: right;
+  background-size: 2rem;
+  background-position: 10px center;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.4;
+  font-family: "Space Mono", monospace;
+  width: 100%;
+  margin-top: 12px;
+  box-sizing: border-box;
+}
+
+.dollar {
+  background: url("../../assets/input-icons/dollar-icon.svg") no-repeat left;
+}
+
+.person {
+  background: url("../../assets/input-icons/person-icon.svg") no-repeat left;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

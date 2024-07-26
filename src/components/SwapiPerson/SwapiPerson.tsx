@@ -17,13 +17,17 @@ const fetchPerson = async (id: number) => {
 
 export const SwapiPerson = ({ id }: SwapiPersonProps) => {
   const [personInfo, setPersonInfo] = useState<Person>({ name: "" });
-
+  console.log("rendered");
   useEffect(() => {
     const fetchPersonInternal = async () => {
       const person = await fetchPerson(id);
       setPersonInfo(person);
     };
     fetchPersonInternal();
+
+    return () => {
+      console.log("cleanup called");
+    };
   }, [id]);
 
   return <div className="swapiPerson">{personInfo.name}</div>;
