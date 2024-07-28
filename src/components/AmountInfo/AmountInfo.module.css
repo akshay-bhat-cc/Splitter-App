@@ -1,0 +1,9 @@
+.amountInfo {
+  background-color: #00474b;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 20px;
+  justify-content: space-between;
+  flex: 1;
+}

@@ -1,0 +1,12 @@
+.resetButton {
+  background-color: #0d686d;
+  color: #00474b;
+  padding: 10px 200px;
+  font-family: "Space Mono", monospace;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 36px;
+  border-radius: 7px;
+}

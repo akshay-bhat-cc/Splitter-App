@@ -1,0 +1,25 @@
+.tipButton {
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-family: "Space Mono", monospace;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  width: 100%;
+}
+
+.tip {
+  background: #00474b;
+  color: #feffff;
+  padding: 6.9px 44.22px;
+  line-height: 47px;
+  font-size: 2rem;
+}
+
+.custom {
+  background: #f3f8fb;
+  color: #5d6b6c;
+  font-size: 1.5rem;
+  padding: 12.4px 28.62px;
+  line-height: 36px;
+}

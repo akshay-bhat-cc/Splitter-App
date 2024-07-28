@@ -1,0 +1,26 @@
+.selectTip {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.label {
+  font-family: "Space Mono", monospace;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.children {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.children > * {
+  flex: 1 1;
+}
