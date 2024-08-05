@@ -32,7 +32,7 @@ export const SelectTipBox: Story = {
         <TipButton tipPercentage={15}></TipButton>
         <TipButton tipPercentage={25}></TipButton>
         <TipButton tipPercentage={50}></TipButton>
-        <TipButton tipPercentage="custon"></TipButton>
+        <TipButton tipPercentage="custom"></TipButton>
       </>
     ),
   },

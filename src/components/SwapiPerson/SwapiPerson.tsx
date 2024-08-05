@@ -1,34 +1,35 @@
-import { useEffect, useState } from "react";
 import "./SwapiPerson.css";
+import { useFetch } from "../../hooks/useFetch";
 
 export interface SwapiPersonProps {
   id: number;
 }
 
-interface Person {
+interface IPerson {
   name: string;
 }
 
-const fetchPerson = async (id: number) => {
-  const response = await fetch(`https://swapi.py4e.com/api/species/${id}`);
-  const json = await response.json();
-  return json;
-};
-
 export const SwapiPerson = ({ id }: SwapiPersonProps) => {
-  const [personInfo, setPersonInfo] = useState<Person>({ name: "" });
-  console.log("rendered");
-  useEffect(() => {
-    const fetchPersonInternal = async () => {
-      const person = await fetchPerson(id);
-      setPersonInfo(person);
-    };
-    fetchPersonInternal();
+  const { data, status } = useFetch<IPerson>(
+    `https://swapi.py4e.com/api/species/${id}`
+  );
 
-    return () => {
-      console.log("cleanup called");
-    };
-  }, [id]);
-
-  return <div className="swapiPerson">{personInfo.name}</div>;
+  let Person;
+  switch (status) {
+    case "pending":
+      Person = () => <div>{"Loading..."}</div>;
+      break;
+    case "error":
+      Person = () => <div>{"Error... : ("}</div>;
+      break;
+    case "loaded": {
+      const person = data as IPerson;
+      Person = () => <div>{person.name}</div>;
+    }
+  }
+  return (
+    <div className="swapiPerson">
+      <Person />
+    </div>
+  );
 };

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { NumberInput } from "./NumberInput";
+import { ChangeEvent, useEffect, useState } from "react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -21,16 +22,44 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Bill: Story = {
-  args: {
-    iconType: "dollar",
-    label: "Bill",
-  },
-};
 
 export const NoOfPeople: Story = {
   args: {
     iconType: "person",
     label: "No of People",
+  },
+  render: (args) => {
+    const errorMessage = "No of people cannot be in decimal";
+    const [value, setValue] = useState(0);
+    const [touched, setTouched] = useState(false);
+    const [error, setError] = useState("");
+    const minValue = 1;
+    const isInvalid = (value: number) => value % 1 > 0;
+
+    useEffect(() => {
+      if (touched) {
+        if (isInvalid && isInvalid(value)) {
+          setError(errorMessage);
+        } else if (value < minValue) {
+          setError(`${args.label} must be at least ${minValue}`);
+        } else {
+          setError("");
+        }
+      }
+    }, [args.label, touched, value]);
+
+    const inputHandle = (e: ChangeEvent<HTMLInputElement>) => {
+      setValue(Number(e.target.value));
+      setTouched(true);
+    };
+
+    return (
+      <NumberInput
+        {...args}
+        onChange={inputHandle}
+        min={minValue}
+        errorMessage={error}
+      ></NumberInput>
+    );
   },
 };

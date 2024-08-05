@@ -1,16 +1,15 @@
-import React from "react";
 import styles from "./Header.module.css";
 
 export interface HeaderProps {
   // Add your props here
-  header: string;
+  label: string;
 }
 
-export const Header = ({ header }: HeaderProps) => {
+export const Header = ({ label }: HeaderProps) => {
   return (
     <div className={styles.header}>
-      <p>{header.substring(0, header.length / 2)}</p>
-      <p>{header.substring(header.length / 2)}</p>
+      <h2>{label.substring(0, label.length / 2)}</h2>
+      <h2>{label.substring(label.length / 2)}</h2>
     </div>
   );
 };

@@ -15,12 +15,13 @@ export const AmountDisplay = ({
 
   return (
     <div className={styles.amountDisplay}>
-      <div className={styles.labelperson}>
+      <div className={styles.labelPerson}>
         <span className={styles.label}>{label}</span>
         <span className={styles.person}>/ person</span>
       </div>
+
       <div>
-        <span className={styles.amount}>{formattedAmount}%</span>
+        <span className={styles.amount}>{formattedAmount}</span>
       </div>
     </div>
   );

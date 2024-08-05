@@ -1,25 +1,52 @@
 .tipButton {
-  box-sizing: border-box;
-  border-radius: 6px;
-  font-family: "Space Mono", monospace;
+  border-radius: 0.375rem;
   font-style: normal;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.1rem;
   font-weight: 700;
-  width: 100%;
+  text-align: center;
+  padding: 0;
+  border: 0;
+  transition:
+    background 0.1s ease,
+    color 0.1s ease;
 }
 
 .tip {
   background: #00474b;
   color: #feffff;
-  padding: 6.9px 44.22px;
-  line-height: 47px;
   font-size: 2rem;
+  line-height: 2rem;
 }
 
 .custom {
   background: #f3f8fb;
   color: #5d6b6c;
   font-size: 1.5rem;
-  padding: 12.4px 28.62px;
-  line-height: 36px;
+  line-height: 2.25rem;
+  border: none;
+  padding: 14px 0;
+  width: 100%;
+}
+
+.tip.selected {
+  background: #bfdbea;
+  color: #00474b;
+  transition:
+    background 0.1s ease,
+    color 0.1s ease;
+}
+
+/* Default: Desktop monitors, 1501px and up */
+@media (max-width: 1500px) {
+  /* Laptop */
+}
+@media (max-width: 1100px) {
+  /* Tablets */
+}
+@media (max-width: 550px) {
+  /* Phones */
+  .tipButton {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
 }
