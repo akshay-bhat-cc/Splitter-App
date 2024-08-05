@@ -18,6 +18,7 @@ export interface TipCalculatorProps {
   selectTipHandle: (e: React.MouseEvent<HTMLButtonElement>) => void;
   customTipHandle: (e: ChangeEvent<HTMLInputElement>) => void;
   selectedTip: number | "custom";
+  customTip: number;
 }
 
 export const TipCalculator = ({
@@ -34,6 +35,7 @@ export const TipCalculator = ({
   minCustomTip,
   billAmount,
   personCount,
+  customTip,
 }: TipCalculatorProps) => {
   return (
     <div className={styles.tipCalculator}>
@@ -54,7 +56,7 @@ export const TipCalculator = ({
             customTipHandle={customTipHandle}
             isSelected={selectedTip === percentage}
             minCustomTip={minCustomTip}
-            selectedTip={selectedTip}
+            customTip={customTip}
           ></TipButton>
         ))}
       </SelectTip>

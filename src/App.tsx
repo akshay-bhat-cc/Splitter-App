@@ -14,6 +14,7 @@ interface State {
   tipPercentage: number | "custom";
   tipAmount: number;
   totalAmount: number;
+  customTip: number;
   isResetSelected: boolean;
 }
 
@@ -25,6 +26,7 @@ const initialState: State = {
   personInputErrorMessage: "",
   billInputErrorMessage: "",
   tipPercentage: 0,
+  customTip: 0,
   tipAmount: 0,
   totalAmount: 0,
   isResetSelected: false,
@@ -33,8 +35,8 @@ const initialState: State = {
 type Action =
   | { type: "SET_BILL_AMOUNT"; payload: number }
   | { type: "SET_PERSON_COUNT"; payload: number }
+  | { type: "SET_CUSTOM_TIP"; payload: number }
   | { type: "SET_TIP_PERCENTAGE"; payload: number | "custom" }
-  | { type: "SET_SELECTED_TIP"; payload: number }
   | { type: "SET_BILL_INPUT_TOUCHED"; payload: boolean }
   | { type: "SET_PERSON_INPUT_TOUCHED"; payload: boolean }
   | { type: "SET_RESET_SELECTED"; payload: boolean }
@@ -51,6 +53,8 @@ function reducer(state: State, action: Action): State {
       return { ...state, personCount: action.payload };
     case "SET_TIP_PERCENTAGE":
       return { ...state, tipPercentage: action.payload };
+    case "SET_CUSTOM_TIP":
+      return { ...state, customTip: action.payload };
     case "SET_BILL_INPUT_TOUCHED":
       return { ...state, isBillInputTouched: action.payload };
     case "SET_PERSON_INPUT_TOUCHED":
@@ -167,6 +171,7 @@ export function App() {
   const customTipHandle = (e: ChangeEvent<HTMLInputElement>) => {
     const customPercentage = Number(e.currentTarget.value);
     dispatch({ type: "SET_TIP_PERCENTAGE", payload: customPercentage });
+    dispatch({ type: "SET_CUSTOM_TIP", payload: customPercentage });
   };
 
   const resetHandle = () => {
@@ -191,6 +196,7 @@ export function App() {
           minCustomTip={minCustomTip}
           personCount={state.personCount}
           billAmount={state.billAmount}
+          customTip={state.customTip}
         ></TipCalculator>
         <AmountInfo
           tipAmount={state.tipAmount}
