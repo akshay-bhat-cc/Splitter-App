@@ -9,6 +9,8 @@ interface State {
   personCount: number;
   isBillInputTouched: boolean;
   isPersonInputTouched: boolean;
+  isCustomInputTouched: boolean;
+  isTipSelected: boolean;
   personInputErrorMessage: string;
   billInputErrorMessage: string;
   tipPercentage: number | "custom";
@@ -23,6 +25,8 @@ const initialState: State = {
   personCount: 0,
   isBillInputTouched: false,
   isPersonInputTouched: false,
+  isCustomInputTouched: false,
+  isTipSelected: false,
   personInputErrorMessage: "",
   billInputErrorMessage: "",
   tipPercentage: 0,
@@ -39,6 +43,8 @@ type Action =
   | { type: "SET_TIP_PERCENTAGE"; payload: number | "custom" }
   | { type: "SET_BILL_INPUT_TOUCHED"; payload: boolean }
   | { type: "SET_PERSON_INPUT_TOUCHED"; payload: boolean }
+  | { type: "SET_CUSTOM_INPUT_TOUCHED"; payload: boolean }
+  | { type: "SET_TIP_BUTTON_TOUCHED"; payload: boolean }
   | { type: "SET_RESET_SELECTED"; payload: boolean }
   | { type: "SET_PERSON_INPUT_ERROR"; payload: string }
   | { type: "SET_BILL_INPUT_ERROR"; payload: string }
@@ -59,6 +65,10 @@ function reducer(state: State, action: Action): State {
       return { ...state, isBillInputTouched: action.payload };
     case "SET_PERSON_INPUT_TOUCHED":
       return { ...state, isPersonInputTouched: action.payload };
+    case "SET_TIP_BUTTON_TOUCHED":
+      return { ...state, isTipSelected: action.payload };
+    case "SET_CUSTOM_INPUT_TOUCHED":
+      return { ...state, isCustomInputTouched: action.payload };
     case "SET_PERSON_INPUT_ERROR":
       return { ...state, personInputErrorMessage: action.payload };
     case "SET_BILL_INPUT_ERROR":
@@ -140,7 +150,12 @@ export function App() {
     if (state.isPersonInputTouched) {
       isPersonInputValid(state.personCount);
     }
-    if (state.isBillInputTouched || state.isPersonInputTouched) {
+    if (
+      state.isBillInputTouched ||
+      state.isPersonInputTouched ||
+      state.isTipSelected ||
+      state.isCustomInputTouched
+    ) {
       dispatch({ type: "SET_RESET_SELECTED", payload: true });
     }
 
@@ -151,6 +166,8 @@ export function App() {
     state.isBillInputTouched,
     state.personCount,
     state.tipPercentage,
+    state.isTipSelected,
+    state.isCustomInputTouched,
   ]);
 
   const personInputHandle = (e: ChangeEvent<HTMLInputElement>) => {
@@ -166,12 +183,14 @@ export function App() {
   const selectTipHandle = (e: React.MouseEvent<HTMLButtonElement>) => {
     const percentage = Number(e.currentTarget.getAttribute("data-percentage"));
     dispatch({ type: "SET_TIP_PERCENTAGE", payload: percentage });
+    dispatch({ type: "SET_TIP_BUTTON_TOUCHED", payload: true });
   };
 
   const customTipHandle = (e: ChangeEvent<HTMLInputElement>) => {
     const customPercentage = Number(e.currentTarget.value);
     dispatch({ type: "SET_TIP_PERCENTAGE", payload: customPercentage });
     dispatch({ type: "SET_CUSTOM_TIP", payload: customPercentage });
+    dispatch({ type: "SET_CUSTOM_INPUT_TOUCHED", payload: true });
   };
 
   const resetHandle = () => {
