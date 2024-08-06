@@ -7,17 +7,17 @@ import { TipCalculator } from "./components/TipCalculator/TipCalculator";
 interface State {
   billAmount: number;
   personCount: number;
-  isBillInputTouched: boolean;
-  isPersonInputTouched: boolean;
-  isCustomInputTouched: boolean;
-  isTipSelected: boolean;
-  personInputErrorMessage: string;
-  billInputErrorMessage: string;
-  tipPercentage: number | "custom";
+  // isBillInputTouched: boolean;
+  // isPersonInputTouched: boolean;
+  // isCustomInputTouched: boolean;
+  // isTipSelected: boolean;
+  // personInputErrorMessage: string;
+  // billInputErrorMessage: string;
+  // tipPercentage: number | "custom";
   tipAmount: number;
-  totalAmount: number;
-  customTip: number;
-  isResetSelected: boolean;
+  // totalAmount: number;
+  // customTip: number;
+  // isResetSelected: boolean;
 }
 
 const initialState: State = {

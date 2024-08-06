@@ -27,9 +27,16 @@
   padding: 14px 0;
   width: 100%;
 }
+.custom::placeholder {
+  color: black;
+}
+.tip:hover {
+  background: hsl(173, 61%, 76%);
+  color: #00474b;
+}
 
 .tip.selected {
-  background: #bfdbea;
+  background: hsl(172, 67%, 45%);
   color: #00474b;
   transition:
     background 0.1s ease,

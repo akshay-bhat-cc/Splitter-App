@@ -32,7 +32,7 @@ export const TipButton = ({
         <input
           type="number"
           className={`${styles.custom} ${styles.tipButton}`}
-          placeholder="custom"
+          placeholder="Custom"
           onChange={customTipHandle}
           min={minCustomTip}
           value={customTip === 0 ? "" : customTip}

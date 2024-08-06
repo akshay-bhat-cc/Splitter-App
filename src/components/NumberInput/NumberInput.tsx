@@ -54,7 +54,7 @@ export const NumberInput = ({
         <div className={styles.iconContainer}>
           <img
             src={iconPaths[iconType]}
-            width={iconType === "dollar" ? 14 : 18}
+            // width={iconType === "dollar" ? 14 : 18}
             alt={`${iconType}-icon`}
           />
         </div>
