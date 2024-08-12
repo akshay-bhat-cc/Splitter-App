@@ -1,3 +1,7 @@
+:root {
+  --color-background: hsl(185, 42%, 84%);
+  --color-white: #ffffff;
+}
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -23,7 +27,7 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background: hsl(185, 42%, 84%);
+  background: var(--color-background);
 }
 /*
   5. Improve media defaults
@@ -89,7 +93,7 @@ h6 {
 .splitter {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: white;
+  background-color: var(--color-white);
   border-radius: 2rem;
   gap: 67px;
   padding: 61px;

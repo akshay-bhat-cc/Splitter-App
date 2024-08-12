@@ -1,5 +1,9 @@
+:root {
+  /* Colors */
+  --color-dark-teal: #00474b;
+}
 .amountInfo {
-  background-color: #00474b;
+  background-color: var(--color-dark-teal);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;

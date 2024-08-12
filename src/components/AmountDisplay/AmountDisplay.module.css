@@ -1,5 +1,10 @@
+:root {
+  --color-almost-white: #feffff;
+  --color-muted-teal: #9fb3b2;
+  --color-teal: #2cc0ad;
+}
+
 .amountDisplay {
-  font-family: "Space Mono", monospace;
   display: flex;
   justify-content: space-between;
 }
@@ -10,7 +15,7 @@
 }
 
 .label {
-  color: #feffff;
+  color: var(--color-almost-white);
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 1.875rem;
@@ -19,13 +24,13 @@
 }
 
 .person {
-  color: #9fb3b2;
+  color: var(--color-muted-teal);
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 1.875rem;
 
   letter-spacing: 0.1rem;
-  color: #9fb3b2;
+  color: var(--color-muted-teal);
 }
 
 .amount {
@@ -34,7 +39,7 @@
   font-size: 3rem;
   line-height: 4.4375rem;
   text-align: right;
-  color: #2cc0ad;
+  color: var(--color-teal);
 }
 @media (max-width: 1500px) {
   /* Laptop */
