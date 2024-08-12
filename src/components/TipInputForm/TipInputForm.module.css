@@ -1,0 +1,40 @@
+.TipInputForm {
+  display: grid;
+  padding: 4px 0;
+  min-width: 525px;
+  /* min-height: 575px; */
+}
+
+.spacer1 {
+  height: 32px;
+}
+
+.spacer2 {
+  height: 56px;
+}
+
+/* Default: Desktop monitors, 1501px and up */
+@media (max-width: 1500px) {
+  /* Laptop */
+  .TipInputForm {
+    min-width: 0;
+  }
+}
+@media (max-width: 1100px) {
+  /* Tablets */
+}
+@media (max-width: 550px) {
+  /* Phones */
+  .TipInputForm {
+    gap: 0;
+    padding: 0;
+  }
+
+  .spacer1 {
+    height: 13.6px;
+  }
+
+  .spacer2 {
+    height: 32px;
+  }
+}

@@ -1,28 +1,37 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { AmountInfo } from './AmountInfo';
+import type { Meta, StoryObj } from "@storybook/react";
+import { AmountInfo } from "./AmountInfo";
+import { action } from "@storybook/addon-actions"; // Import action for handling clicks
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta = {
-  title: 'Example/AmountInfo',
+const meta: Meta<typeof AmountInfo> = {
+  title: "Example/AmountInfo",
   component: AmountInfo,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered',
+    layout: "centered",
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  argTypes: { },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: {  },
-} satisfies Meta<typeof AmountInfo>;
+  tags: ["autodocs"],
+  argTypes: {
+    resetHandle: { action: "resetHandleClicked" }, // Track the reset button click
+  },
+};
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    children: <></>,
-  }
+    tipAmount: 15.0,
+    totalAmount: 115.0,
+    resetHandle: action("resetHandleClicked"), // Use Storybook action to log clicks
+    isResetSelected: false,
+  },
+};
+
+export const ResetSelected: Story = {
+  args: {
+    tipAmount: 20.0,
+    totalAmount: 120.0,
+    resetHandle: action("resetHandleClicked"),
+    isResetSelected: true,
+  },
 };

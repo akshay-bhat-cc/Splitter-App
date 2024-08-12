@@ -11,7 +11,7 @@ export const AmountDisplay = ({
   amount,
   decimals = 2,
 }: AmountDisplayProps) => {
-  const formattedAmount = amount.toFixed(decimals);
+  const formattedAmount = amount ? amount.toFixed(decimals) : "--";
 
   return (
     <div className={styles.amountDisplay}>
@@ -21,7 +21,7 @@ export const AmountDisplay = ({
       </div>
 
       <div>
-        <span className={styles.amount}>{formattedAmount}</span>
+        <span className={styles.amount}>${formattedAmount}</span>
       </div>
     </div>
   );

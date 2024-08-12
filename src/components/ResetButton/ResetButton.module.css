@@ -6,11 +6,10 @@
   font-size: 1.5rem;
   line-height: 2.25rem;
   letter-spacing: 0.1em;
-  margin: 195px 56px 56px 56px;
   border: none;
-  padding: 13px 184.28px;
   border-radius: 7px;
   transition: background 0.1s ease;
+  padding: 13px 0;
 }
 .resetButton.selected {
   background: #2cc0ae;
@@ -29,7 +28,5 @@
   .resetButton {
     font-size: 1.25rem;
     line-height: 1.875rem;
-    padding: 5px 105px;
-    margin: 52px;
   }
 }

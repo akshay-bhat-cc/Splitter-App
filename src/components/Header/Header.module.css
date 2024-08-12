@@ -3,13 +3,12 @@
   color: #00474b;
   letter-spacing: 0.5rem;
   width: max-content;
-  margin: 1rem auto;
 }
 
 @media (max-width: 550px) {
   /* Phones */
   .header {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 2.25rem;
     letter-spacing: 0.47rem;
   }

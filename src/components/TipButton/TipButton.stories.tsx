@@ -21,15 +21,26 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const tipButton: Story = {
+export const DefaultTipButton: Story = {
   args: {
-    tipPercentage: 10,
+    tipPercentage: 15,
+    isSelected: false,
+    minCustomTip: 1,
   },
 };
 
-export const custom: Story = {
+export const CustomTipInput: Story = {
   args: {
     tipPercentage: "custom",
+    isSelected: false,
+    minCustomTip: 1,
+  },
+};
 
+export const SelectedTipButton: Story = {
+  args: {
+    tipPercentage: 20,
+    isSelected: true,
+    minCustomTip: 1,
   },
 };

@@ -5,8 +5,7 @@ export interface TipButtonProps extends React.ComponentProps<"button"> {
   // Add your props here
   tipPercentage: number | "custom";
   isSelected: boolean;
-  minCustomTip: number;
-  customTip: number;
+  customTip: number | string;
   customTipHandle: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -14,7 +13,6 @@ export const TipButton = ({
   tipPercentage,
   customTipHandle,
   isSelected,
-  minCustomTip,
   customTip,
   ...delegated
 }: TipButtonProps) => {
@@ -34,8 +32,7 @@ export const TipButton = ({
           className={`${styles.custom} ${styles.tipButton}`}
           placeholder="Custom"
           onChange={customTipHandle}
-          min={minCustomTip}
-          value={customTip === 0 ? "" : customTip}
+          value={customTip}
         />
       )}
     </>

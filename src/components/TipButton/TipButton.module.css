@@ -4,11 +4,11 @@
   letter-spacing: 0.1rem;
   font-weight: 700;
   text-align: center;
-  padding: 0;
   border: 0;
   transition:
     background 0.1s ease,
     color 0.1s ease;
+  padding: 14px 0;
 }
 
 .tip {
@@ -23,13 +23,15 @@
   color: #5d6b6c;
   font-size: 1.5rem;
   line-height: 2.25rem;
-  border: none;
-  padding: 14px 0;
+  box-sizing: border-box;
   width: 100%;
 }
-.custom::placeholder {
-  color: black;
+
+.custom:focus-visible {
+  outline: 0.125rem solid hsl(172deg 31% 52% / 100%);
+  color: #00474b;
 }
+
 .tip:hover {
   background: hsl(173, 61%, 76%);
   color: #00474b;
@@ -47,7 +49,7 @@
 @media (max-width: 1500px) {
   /* Laptop */
 }
-@media (max-width: 1100px) {
+@media (max-width: 1366px) {
   /* Tablets */
 }
 @media (max-width: 550px) {
@@ -55,5 +57,6 @@
   .tipButton {
     font-size: 1.5rem;
     line-height: 2.25rem;
+    padding: 6px 0;
   }
 }
