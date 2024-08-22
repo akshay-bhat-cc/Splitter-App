@@ -1,6 +1,6 @@
 import { useId } from "react";
-import styles from "./NumberInput.module.css";
-
+import clsx from "clsx";
+import "./NumberInput.module.css";
 export interface NumberInputProps extends React.ComponentProps<"input"> {
   /**
    * Label of the Input
@@ -34,25 +34,24 @@ export const NumberInput = ({
   errorMessage,
   ...delegated
 }: NumberInputProps) => {
-  let inputClass = `${styles.numberInput}`;
-  if (errorMessage) {
-    inputClass += ` ${styles.error}`;
-  }
   const uniqueId = useId();
   return (
-    <div className={styles.container}>
-      <label className={styles.label} htmlFor={`${uniqueId}number-input`}>
+    <div className="grid text-grey">
+      <label
+        className="text-[1.25rem] font-bold leading-[1.4] tracking-[0.1rem] md:text-[0.875rem]"
+        htmlFor={`${uniqueId}-number-input`}
+      >
         {label}
       </label>
-      <div className={styles.spacer1}></div>
-      <div className={styles.inputContainer}>
+      <div className="h-4 md:h-2"></div>
+      <div className="relative">
         <input
           type="number"
-          id={`${uniqueId}number-input`}
-          className={inputClass}
+          id={`${uniqueId}-number-input`}
+          className={clsx("input", { "outline-error": errorMessage })}
           {...delegated}
         />
-        <div className={styles.iconContainer}>
+        <div className="absolute top-0 bottom-0 grid place-content-center left-[1.25rem]">
           <img
             src={iconPaths[iconType]}
             width={iconType === "dollar" ? 14 : 18}
@@ -60,7 +59,9 @@ export const NumberInput = ({
           />
         </div>
       </div>
-      <p className={styles.errorMessage}>{errorMessage}</p>
+      <p className="min-h-[1.5rem] md:text-[0.9rem] text-error">
+        {errorMessage}
+      </p>
     </div>
   );
 };

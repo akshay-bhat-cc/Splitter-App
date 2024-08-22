@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply text-[2rem] font-bold leading-[1.4] text-right p-2 w-[100%] block bg-soft-blue rounded-[0.374rem] outline-none min-h-[64px]   outline-[color:hsl(172deg,31%,52%/0%)] focus-visible:outline-[color:hsl(172deg,31%,52%)] md:p-1.5 md:min-h-[48px] md:rounded-[0.221rem] md:text-[1.5rem];
+  }
+}

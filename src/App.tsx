@@ -62,9 +62,9 @@ export function App() {
   }, [state.personCount, state.tipPercentage, state.billAmount, tipAmount]);
 
   return (
-    <div className="splitter_wrapper">
+    <div className="font-mono grid place-items-center gap-[33px] mx-[130px] 2xl:mx-[114px] lg:mx-[24px] md:mx-0">
       <Header label="SPLITTER" />
-      <div className="splitter">
+      <div className="grid grid-cols-2 bg-white rounded-[2rem] gap-[67px] p-[61px] lg:grid-cols-1 md:gap-0 md:p-[33px] md:rounded-b-none">
         <TipInputForm state={state} dispatch={dispatch} />
         <AmountInfo
           tipAmount={tipAmount / +state.personCount}
