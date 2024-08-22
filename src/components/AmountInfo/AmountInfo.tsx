@@ -1,4 +1,3 @@
-import styles from "./AmountInfo.module.css";
 import { AmountDisplay } from "../AmountDisplay/AmountDisplay";
 import { ResetButton } from "../ResetButton/ResetButton";
 
@@ -17,8 +16,8 @@ export const AmountInfo = ({
   isResetSelected,
 }: AmountInfoProps) => {
   return (
-    <div className={styles.amountInfo}>
-      <div className={styles.amount}>
+    <div className="bg-dark-teal rounded-[1rem] flex flex-col justify-between p-[56px] min-w-[566px] 2xl:min-w-0 md:p-[16px] md:gap-[58px]">
+      <div className="grid gap-[64px] overflow-x-auto md:gap-[26.45px]">
         <AmountDisplay amount={tipAmount} label={"Tip Amount"}></AmountDisplay>
         <AmountDisplay amount={totalAmount} label={"Total"}></AmountDisplay>
       </div>

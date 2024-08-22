@@ -1,8 +1,7 @@
 import React, { ChangeEvent } from "react";
-import styles from "./TipButton.module.css";
+import clsx from "clsx";
 
 export interface TipButtonProps extends React.ComponentProps<"button"> {
-  // Add your props here
   tipPercentage: number | "custom";
   isSelected: boolean;
   customTip: number | string;
@@ -20,7 +19,10 @@ export const TipButton = ({
     <>
       {tipPercentage !== "custom" ? (
         <button
-          className={`${styles.tip} ${styles.tipButton} ${isSelected ? `${styles.selected}` : ""}`}
+          className={clsx(
+            "bg-[#00474b] text-[#feffff] text-[2rem] leading-[2rem] rounded-[0.375rem] font-bold text-center border-0 py-[14px] transition-colors ease-linear duration-100",
+            { "bg-[#2cc0ae] text-[#00474b]": isSelected }
+          )}
           {...delegated}
           data-percentage={tipPercentage}
         >
@@ -29,7 +31,7 @@ export const TipButton = ({
       ) : (
         <input
           type="number"
-          className={`${styles.custom} ${styles.tipButton}`}
+          className="bg-[#f3f8fb] text-[#5d6b6c] text-[1.5rem] leading-[2.25rem] w-full rounded-[0.375rem] font-bold text-center border-0 py-[14px] transition-colors ease-linear duration-100 focus-visible:outline focus-visible:outline-[0.125rem] focus-visible:outline-[#2cc0ae]"
           placeholder="Custom"
           onChange={customTipHandle}
           value={customTip}

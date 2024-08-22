@@ -1,5 +1,4 @@
 import { ChangeEvent } from "react";
-import styles from "./TipInputForm.module.css";
 import { NumberInput } from "../NumberInput/NumberInput";
 import { SelectTip } from "../SelectTip/SelectTip";
 import { TipButton } from "../TipButton/TipButton";
@@ -44,7 +43,7 @@ export const TipInputForm = ({ state, dispatch }: TipInputFormProps) => {
     return "";
   };
   return (
-    <div className={styles.TipInputForm}>
+    <div className="grid py-[4px] min-w-[525px] 2xl:min-w-0 md:gap-0 md:p-0  ">
       <NumberInput
         iconType="dollar"
         label="Bill"
@@ -52,7 +51,7 @@ export const TipInputForm = ({ state, dispatch }: TipInputFormProps) => {
         errorMessage={validateBillAmount(state.billAmount)}
         value={state.billAmount}
       />
-      <div className={styles.spacer1}></div>
+      <div className="h-8 md:h-[13.6px]"></div>
       <SelectTip label="Select Tip %">
         {tipPercentages.map((percentage, index) => (
           <TipButton
@@ -65,7 +64,7 @@ export const TipInputForm = ({ state, dispatch }: TipInputFormProps) => {
           />
         ))}
       </SelectTip>
-      <div className={styles.spacer2}></div>
+      <div className="h-14 md:h-8"></div>
 
       <NumberInput
         iconType="person"

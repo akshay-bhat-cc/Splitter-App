@@ -1,9 +1,15 @@
 import React from "react";
-import styles from "./ResetButton.module.css";
+import clsx from "clsx";
 
 export interface ResetButtonProps extends React.ComponentProps<"button"> {
-  // Add your props here
+  /**
+   * Label of the button
+   */
   label: string;
+
+  /**
+   * If the button is selected, it will apply the selected styles
+   */
   isSelected: boolean;
 }
 
@@ -12,12 +18,14 @@ export const ResetButton = ({
   isSelected,
   ...delegated
 }: ResetButtonProps) => {
-  let buttonClass = `${styles.resetButton} `;
-  if (isSelected) {
-    buttonClass += ` ${styles.selected} `;
-  }
   return (
-    <button className={buttonClass} {...delegated}>
+    <button
+      className={clsx(
+        "bg-[#0d686d] text-[#00474b] font-bold text-[1.5rem] tracking-[0.1em] border-none rounded-md py-[13px] transition duration-100 ease-linear md:text-[1.25rem]",
+        { "bg-teal": isSelected }
+      )}
+      {...delegated}
+    >
       {label}
     </button>
   );
